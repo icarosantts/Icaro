@@ -1,0 +1,66 @@
+/*Estilos para centralizar o formulário na página*/
+body{
+    display: flex; /*Utiliza flexbox para facilitar o alinhamento*/
+    justify-content: center;/*Centraliza horizontalmente*/
+    align-items: center;/*Centraliza verticalmente o formulário*/
+    height: 100vh;/*Define a altura da página como 100% da altura da janela*/
+    background-color: aliceblue;/*Cor de fundo clara*/
+    margin: 0;/*Remove margens padrão do corpo*/
+    font-family: Arial, Helvetica, sans-serif;/*Define a fonte padrão*/
+}
+
+/*Estilo do container do formulario*/
+.form-container{
+    background-color: #fff;/*Fundo branco para o formulário*/
+    padding: 20px;/*Espaçamento interno ao redor dos elementos*/
+    border-radius: 10px;/*arredonda os cantos do formulário*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);/*Adiciona sombra*/
+    width: 300px;/*Define a largura fixa do formulário*/
+}
+
+/*Estilo para o título do formulário*/
+h2{
+    text-align: center;/*Centraliza o texto do título*/
+    margin-bottom: 20px;/*Adiciona um espaçamento inferior*/
+    font-size: 1.5em;/*Aumenta o tamnho da fonte do titulo*/
+    color: #333;/*Define a cor do texto*/
+}
+
+label{
+    display: block;/*Exibe o rótulo em bloco para que ocupe toda a largura*/
+    margin-bottom: 5px;/*Espaçamento inferior entre o rótulo e o campo de input*/
+    font-size: 0.9em;/*Define um tamanho de fonte um pouco menor*/
+    color: #333;/*COr escura para os rotulos*/
+}
+
+input[type="text"], input[type="email"], input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #0c5abf;
+}
+
+#error-message{
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: center;
+}
