@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estou Procurando Técnico - TECSNAI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">TECSNAI</h1>
+            <nav class="menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="seja-tecnico.html">Seja Técnico</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>    
+    </header>
+
+    <main>
+        <section>
+            <h2>Estou Procurando um Técnico</h2>
+            <p>Responda ao quiz abaixo para encontrar o técnico ideal para suas necessidades.</p>
+            <form id="quiz-form">
+                <div class="form-group">
+                    <label for="tipo-tecnico">Que técnico você procura?</label>
+                    <select id="tipo-tecnico" name="tipo-tecnico" required>
+                        <option value="">Selecione...</option>
+                        <option value="eletrica">Elétrica</option>
+                        <option value="informatica">Informática</option>
+                        <option value="mecanica">Mecânica</option>
+                        <!-- Adicione mais opções conforme necessário -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Você procura contratar ou um serviço freelancer?</label>
+                    <select id="tipo-servico" name="tipo-servico" required>
+                        <option value="">Selecione...</option>
+                        <option value="contratar">Contratar</option>
+                        <option value="freelancer">Freelancer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Você tem preferência por um técnico já certificado ou pode ser um que está cursando?</label>
+                    <select id="certificacao" name="certificacao" required>
+                        <option value="">Selecione...</option>
+                        <option value="certificado">Certificado</option>
+                        <option value="cursando">Cursando</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Filtrar valores de serviço (R$):</label>
+                    <input type="number" id="valor-minimo" name="valor-minimo" placeholder="Valor Mínimo" required>
+                    <input type="number" id="valor-maximo" name="valor-maximo" placeholder="Valor Máximo" required>
+                </div>
+
+                <button type="submit">Buscar Técnicos</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TECSNAI. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Previne o envio padrão do formulário
+
+            // Captura os dados do formulário
+            const tipoTecnico = document.getElementById('tipo-tecnico').value;
+            const tipoServico = document.getElementById('tipo-servico').value;
+            const certificacao = document.getElementById('certificacao').value;
+            const valorMinimo = document.getElementById('valor-minimo').value;
+            const valorMaximo = document.getElementById('valor-maximo').value;
+
+            // Salva os dados no localStorage
+            localStorage.setItem('tipoTecnico', tipoTecnico);
+            localStorage.setItem('tipoServico', tipoServico);
+            localStorage.setItem('certificacao', certificacao);
+            localStorage.setItem('valorMinimo', valorMinimo);
+            localStorage.setItem('valorMaximo', valorMaximo);
+
+            // Redireciona para a página de painel de técnicos
+            window.location.href = 'painel-tecnicos.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja Técnico - TECSNAI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">TECSNAI</h1>
+            <nav class="menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="procurando-tecnico.html">Estou procurando por um Técnico</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>    
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Seja Técnico</h2>
+            <p>Junte-se à nossa comunidade de técnicos e amplie suas oportunidades profissionais! Cadastre-se e conecte-se com clientes em busca de seus serviços.</p>
+        </section>
+
+        <section class="form-section">
+            <h3>Preencha o formulário abaixo para se cadastrar:</h3>
+            <form id="cadastro-tecnico">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                <div class="form-group">
+                    <label for="especialidade">Especialidade:</label>
+                    <select id="especialidade" name="especialidade" required>
+                        <option value="">Selecione sua especialidade</option>
+                        <option value="eletrica">Elétrica</option>
+                        <option value="informatica">Informática</option>
+                        <option value="mecanica">Mecânica</option>
+                        <!-- Mais opções podem ser adicionadas aqui -->
+                    </select>
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+        <section class="google-signup">
+            <h3>Ou cadastre-se com:</h3>
+            <button class="google-button">Inscrever-se com Google</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TECSNAI. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('cadastro-tecnico').addEventListener('submit', function(e) {
+            e.preventDefault(); // Previne o envio padrão do formulário
+            
+            // Captura os dados do formulário
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const especialidade = document.getElementById('especialidade').value;
+
+            // Armazena os dados no localStorage
+            const tecnico = { nome, email, senha, especialidade };
+            localStorage.setItem('tecnico', JSON.stringify(tecnico));
+
+            // Mensagem de confirmação
+            alert('Cadastro realizado com sucesso!');
+
+            // Opcional: Redirecionar para outra página
+            // window.location.href = 'pagina-de-confirmacao.html';
+        });
+    </script>
+</body>
+</html>
