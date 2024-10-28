@@ -9,61 +9,41 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="logo">TECSNAI</h1>
+            <h1 class="logo"><a href="index.html">TECSNAI</a></h1>
             <nav class="menu">
                 <ul class="nav-links">
-                    <li><a href="index.html">Página Inicial</a></li>
                     <li><a href="seja-tecnico.html">Seja Técnico</a></li>
                     <li><a href="procurando-tecnico.html">Estou procurando por um Técnico</a></li>
+                    <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
         </div>    
     </header>
 
     <main>
-        <section>
-            <h2>Login de Cliente</h2>
-            <p>Por favor, insira seus dados para acessar sua conta.</p>
-            <form id="login-form">
+        <div class="login-container">
+            <h2>Tela de Login</h2>
+            <form action="processar_login.php" method="POST"> 
                 <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite o seu email" required>
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                 </div>
-                <button type="submit">Entrar</button>
+                <button type="submit">Login</button>    
             </form>
-            <p>Não tem uma conta? <a href="cadastro-cliente.html">Cadastre-se aqui</a></p>
-        </section>
+            <div class="footer">
+                <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 TECSNAI. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault(); // Previne o envio padrão do formulário
-            
-            // Captura os dados do formulário
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('senha').value;
-
-            // Obtém os dados do cliente armazenados no localStorage
-            const clienteStored = localStorage.getItem('cliente');
-            const cliente = clienteStored ? JSON.parse(clienteStored) : null;
-
-            // Verifica se os dados estão corretos
-            if (cliente && cliente.email === email && cliente.senha === senha) {
-                alert('Login bem-sucedido!');
-                // Redirecionar para a página do painel ou outra página
-                // window.location.href = 'painel.html'; 
-            } else {
-                alert('E-mail ou senha incorretos. Tente novamente.');
-            }
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
