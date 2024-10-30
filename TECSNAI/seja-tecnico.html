@@ -24,102 +24,12 @@
         <section class="intro">
             <h2>Seja Técnico</h2>
             <p>Junte-se à nossa comunidade de técnicos e amplie suas oportunidades profissionais! Cadastre-se e conecte-se com clientes em busca de seus serviços.</p>
-        </section>
-
-        <section class="form-section">
-            <h3>Preencha o formulário abaixo para se cadastrar:</h3>
-            <form id="cadastro-tecnico">
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
-                </div>
-                <div class="form-group">
-                    <label for="especialidade">Especialidade:</label>
-                    <select id="especialidade" name="especialidade" required>
-                        <option value="">Selecione sua especialidade</option>
-                        <option value="alimentos">Técnico em Alimentos</option>
-                        <option value="automacao-industrial">Técnico em Automação Industrial</option>
-                        <option value="mecatronica">Técnico em Mecatrônica</option>
-                        <option value="manutencao-automotiva">Técnico em Manutenção Automotiva</option>
-                        <option value="edificacoes">Técnico em Edificações</option>
-                        <option value="design-calcados">Técnico em Design de Calçados</option>
-                        <option value="eletroeletronica">Técnico em Eletroeletrônica</option>
-                        <option value="eletronica">Técnico em Eletrônica</option>
-                        <option value="eletrotecnica">Técnico em Eletrotécnica</option>
-                        <option value="sistemas-energia-renovavel">Técnico em Sistemas de Energia Renovável</option>
-                        <option value="qualidade">Técnico em Qualidade</option>
-                        <option value="multimidia">Técnico em Multimídia</option>
-                        <option value="comunicacao-visual">Técnico em Comunicação Visual</option>
-                        <option value="impressao-offset">Técnico em Impressão Offset</option>
-                        <option value="impressao-rotografica-flexografica">Técnico em Impressão Rotográfica e Flexográfica</option>
-                        <option value="processos-graficos">Técnico em Processos Gráficos</option>
-                        <option value="portos">Técnico em Portos</option>
-                        <option value="logistica">Técnico em Logística</option>
-                        <option value="eletromecanica">Técnico em Eletromecânica</option>
-                        <option value="fabricacao-mecanica">Técnico em Fabricação Mecânica</option>
-                        <option value="manutencao-maquinas-industriais">Técnico em Manutenção de Máquinas Industriais</option>
-                        <option value="mecanica">Técnico em Mecânica</option>
-                        <option value="mecanica-precisao">Técnico em Mecânica de Precisão</option>
-                        <option value="metalurgia">Técnico em Metalurgia</option>
-                        <option value="soldagem">Técnico em Soldagem</option>
-                        <option value="soldagem-papel">Técnico em Soldagem e Papel</option>
-                        <option value="ceramica">Técnico em Cerâmica</option>
-                        <option value="petroquimica">Técnico em Petroquímica</option>
-                        <option value="plasticos">Técnico em Plásticos</option>
-                        <option value="analises-quimicas">Técnico em Análises Químicas</option>
-                        <option value="quimica">Técnico em Química</option>
-                        <option value="refrigeracao-climatizacao">Técnico em Refrigeração e Climatização</option>
-                        <option value="equipamentos-biomedicos">Técnico em Equipamentos Biomédicos</option>
-                        <option value="seguranca-trabalho">Técnico em Segurança do Trabalho</option>
-                        <option value="desenvolvimento-sistemas">Técnico em Desenvolvimento de Sistemas</option>
-                        <option value="informatica">Técnico em Informática</option>
-                        <option value="rede-computadores">Técnico em Rede de Computadores</option>
-                        <option value="vestuario">Técnico em Vestuário</option>
-                        <option value="textil">Técnico em Têxtil</option>
-                    </select>
-                </div>
-                <button type="submit">Cadastrar</button>
-            </form>
-        </section>
-
-        <section class="google-signup">
-            <h3>Ou cadastre-se com:</h3>
-            <button class="google-button">Inscrever-se com Google</button>
+            <button onclick="location.href='cadastro-tecnico.html'">Cadastro de Técnico</button>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 TECSNAI. Todos os direitos reservados.</p>
     </footer>
-
-    <script>
-        document.getElementById('cadastro-tecnico').addEventListener('submit', function(e) {
-            e.preventDefault(); // Previne o envio padrão do formulário
-            
-            // Captura os dados do formulário
-            const nome = document.getElementById('nome').value;
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('senha').value;
-            const especialidade = document.getElementById('especialidade').value;
-
-            // Armazena os dados no localStorage
-            const tecnico = { nome, email, senha, especialidade };
-            localStorage.setItem('tecnico', JSON.stringify(tecnico));
-
-            // Mensagem de confirmação
-            alert('Cadastro realizado com sucesso!');
-
-            // Opcional: Redirecionar para outra página
-            // window.location.href = 'pagina-de-confirmacao.html';
-        });
-    </script>
 </body>
 </html>
